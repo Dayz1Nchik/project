@@ -1,0 +1,23 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "a",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
+    "express-session": "^1.17.3",
+    "fs": "^0.0.1-security",
+    "hbs": "^4.2.0",
+    "http": "^0.0.1-security",
+    "mongodb": "^4.5.0",
+    "node-telegram-bot-api": "^0.57.0",
+    "project": "^0.1.6",
+    "socket.io": "^4.5.1"
+  }
+}

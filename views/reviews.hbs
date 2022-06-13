@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reviews.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="left-head">
+                <div class="button-head">
+                    <input class="rd" type="checkbox" name="all" onclick="filtration1()">
+                    <label for="all">Усі</label>
+                </div>
+                <div class="button-head">
+                    <input class="rd" type="checkbox" name="students" onclick="filtration2()">
+                    <label for="students">Відгуки Учнів</label>
+                </div>
+                <div class="button-head">
+                    <input class="rd" type="checkbox" name="parents" onclick="filtration3()">
+                    <label for="parents">Відгуки Батьків</label>
+                </div>
+                <label for="vipuskniki" class="button-head">
+                    <input class="rd" type="checkbox" name="vipuskniki" onclick="filtration4()">
+                    <label for="vipuskniki">Відгуки Випускників</label>
+                </label>
+            </div>
+            <div class="right-head">
+                <label for="star">Рейтинг відгуку:</label>
+                <select name="star" id="star">
+                    <option value="filtration1">Всі</option>
+                    <option value="a5" onclick="filtration11()">
+                        Відмінно - 5/5 ⭐⭐⭐⭐⭐
+                    </option>
+                    <option value="a4" onclick="filtration12()">
+                        Чудово - 4/5 ⭐⭐⭐⭐
+                    </option>
+                    <option value="a3" onclick="filtration13()">
+                        Задоволений - 3/5 ⭐⭐⭐
+                    </option>
+                    <option value="a2" onclick="filtration14()">
+                        Нормально - 2/5 ⭐⭐
+                    </option>
+                    <option value="a1" onclick="filtration15()">
+                        Погано - 1/5 ⭐
+                    </option>
+                    <option value="a0" onclick="filtration16()">
+                        Жахливо - 0/5 
+                    </option>
+                </select>
+                <!-- <img src="img/down.png" alt="ddd"> -->
+            </div>
+        </header>
+        <main class="main">
+            {{{html}}}
+            {{!-- <div class="review">
+                <div class="review-top">
+                    <div class="lrt">
+                        <div class="avatar"></div>
+                        <div class="names">
+                            <p class="persname">Lexa Pupkin</p>
+                            <p id="parent" class="persclas">мать</p>
+                        </div>
+                    </div>
+                    <div id="a5" class="rrt">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="review-main">Безусловно, высокое качество позиционных исследований требует от нас анализа новых предложений. Равным образом, постоянное информационно-пропагандистское.</div>
+            </div> --}}
+            
+        </main>
+        <input class="addnew" onclick="NewReview()" type="button" value="Додати відгук">
+    </div>
+    <div class="new">
+        <div class="rrrooo">
+            <p>Додати коментар:</p>
+            <p style="cursor: pointer;" onclick="closeReview()" class="close"><img src="/img/Закрыть.png" alt=""></p>
+        </div>
+        <form action="/reviews/newReview" class="new-review" method="POST">
+            <div class="up">
+                <div class="pop">
+                    <label for="first_name_b">Ім’я:</label> <br>
+                    <input type="text" name="first_name_b">
+                </div>
+                <div class="pop">
+                    <label for="second_name_b">Прізвище:</label> <br>
+                    <input type="text" name="second_name_b">
+                </div>
+                <div class="pop">
+                    <label for="stars">Рейтинг відгуку:</label> <br>
+                    <select name="stars" id="star" class="strw">
+                        <option value="⭐⭐⭐⭐⭐">
+                            Відмінно - 5/5 ⭐⭐⭐⭐⭐
+                        </option>
+                        <option value="⭐⭐⭐⭐">
+                            Чудово - 4/5 ⭐⭐⭐⭐
+                        </option>
+                        <option value="⭐⭐⭐">
+                            Задоволений - 3/5 ⭐⭐⭐
+                        </option>
+                        <option value="⭐⭐">
+                            Нормально - 2/5 ⭐⭐
+                        </option>
+                        <option value="⭐">
+                            Погано - 1/5 ⭐
+                        </option>
+                        <option value="none">
+                            Жахливо - 0/5 
+                        </option>
+                    </select>
+                </div>
+                <div class="pop">
+                    <label for="clas">Хто ви для школи:</label> <br>
+                    <select name="clas" id="clas">
+                        <option value="student">Учень</option>
+                        <option value="parent">Мати Учня</option>
+                        <option value="parent">Батько Учня</option>
+                        <option value="vipusknik">Випускник</option>
+                    </select>
+                </div>
+            </div>
+            <div class="down">
+                <label for="rev">Ваш коментар:</label> <br>
+                <textarea name="rev" id="rev" cols="30" rows="10"></textarea>
+            </div>  
+            <div class="buttons2">
+                <button type="reset" class="reset">Очистити<img src="/img/trash.png" alt=""></button>
+                <button type="submit" class="submit">Зберегти <img src="/img/Telegram.png" alt=""></button>
+            </div>              
+        </form>
+    </div>
+    <script src="/js/review.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/jurnal.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="buttons">
+            <div class="GroupName">Группа: {{group}}</div>
+            <div class="btttn">
+                <form action="/jurnal/{{group}}/save" method="POST">
+                    <button class="sbutton saveb">💾</button>
+                </form>
+
+                <button class="sbutton redactb">🖋️</button>
+            </div>
+            
+        </div>
+        <div class="table">
+            <div class="months">
+                {{#each calendar}}
+                    {{#if this.current}}
+                        <div class="month active">{{this.month}}</div>
+                    {{else}}
+                        <div class="month">{{this.month}}</div>
+                    {{/if}}
+                {{/each}}
+            </div>
+            <div class="jurnal">
+                <div class="jurnal-items">
+                    <div class="jitem jtnb">
+                        <div class="jitem-i">Прізвище та ім’я учня</div>
+                        <div class="jitem-i">27.08</div>
+                        <div class="jitem-i">28.08</div>
+                        <div class="jitem-i">03.09</div>
+                        <div class="jitem-i">04.09</div>
+                        <div class="jitem-i">10.09</div>
+                        <div class="jitem-i">11.09</div>
+                        <div class="jitem-i">17.09</div>
+                        <div class="jitem-i">18.09</div>
+                        <div class="jitem-i">Середня</div>
+                    </div>
+                   {{!-- { <div class="jitem">
+                        <div class="jitem-i">
+                            {{{html}}}
+                        </div>
+                        <div class="jitem-i">
+                            <input type="text" class="mark">
+                            <input type="text" class="mark">
+                        </div>
+                        <div class="jitem-i">
+                            <input type="text" class="mark">
+                            <input type="text" class="mark">
+                        </div>
+                        <div class="jitem-i">
+                            <input type="text" class="mark">
+                            <input type="text" class="mark">
+                        </div>
+                        <div class="jitem-i">
+                            <input type="text" class="mark">
+                            <input type="text" class="mark">
+                        </div>
+                        <div class="jitem-i">
+                            <input type="text" class="mark">
+                            <input type="text" class="mark">
+                        </div>
+                        <div class="jitem-i">
+                            <input type="text" class="mark">
+                            <input type="text" class="mark">
+                        </div>
+                        <div class="jitem-i">
+                            <input type="text" class="mark">
+                            <input type="text" class="mark">
+                        </div>
+                        <div class="jitem-i">
+                            <input type="text" class="mark">
+                            <input type="text" class="mark">
+                        </div>
+                        <div class="jitem-i">
+                            <input type="text" class="mark III">
+                        </div>
+                    </div>} --}}
+                    {{{html}}}
+
+                </div>
+                <button class="jbutton" onclick="NewUser()">Додати Учня</button>
+            </div>
+        </div>
+        <div class="new">
+            <div class="rrrooo">
+                <p>Додати Учня:</p>
+                <p style="cursor: pointer;" onclick="closeUser()" class="close"><img src="/img/Закрыть.png" alt=""></p>
+            </div>
+            <form action="/jurnal/{{group}}/newUser" class="new-user" method="POST">
+                <div class="left">
+                    <label for="first_name">Ім’я учня:</label>
+                    <input type="text" name="first_name">
+
+                    <label for="second_name">Прізвище учня:</label>
+                    <input type="text" name="second_name">
+
+                    <label for="birth_date">Дата народження:</label>
+                    <input type="date" name="birth_date">
+
+                    <label for="telegram">Телеграм:</label>
+                    <input type="text" name="telegram">
+
+                    <label for="email">Електронна адреса:</label>
+                    <input type="text" name="email">
+
+                    <label for="jurlog">Логін Щоденнику:</label>
+                    <input type="text" name="jurlog">
+
+                    <label for="jurpas">Пароль Щоденнику:</label>
+                    <input type="text" name="jurpas">
+                </div>
+                <div class="right">
+                    <label for="phone">Телефон учня:</label>
+                    <input type="text" name="phone">
+
+                    <label for="photo" >Фотографія учня:</label>
+                    <input type="file" style="height: 335px;" name="photo">
+
+                    <div class="buttons2">
+                        <button type="reset" class="reset"><img src="/img/trash.png" alt=""></button>
+                        <button type="submit" class="submit">Зберегти <img src="/img/Telegram.png" alt=""></button>
+                    </div>
+                    
+                </div>                
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/jurnal.js"></script>
+</body>
+</html>

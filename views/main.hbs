@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+    </style>  
+    <!-- <link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/dist/mdb5/standard/core.min.css"> -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="autorisation">
+            <div class="text-autorisation">
+                <h1 class="h1-aut">Найкращий щоденник
+                  <span style="color:#1266f1;">для успішних учнів</span> </h1>
+                <p class="p-aut">Найбільшу роль в освітньому процесі на сьогодні є допомога учневі в пізнанні вивчаємого матеріалу, а саме у взаємному звязку між учнем та учителем. Саме тому ми представляємо вам щоденник, в якому учні нашого навчального закладу зможуть скористатись усіма сучасними методами комунікації та отримають новий досвід у вивченні програмування.</p>
+            </div>
+            <form  method="POST" action="/auth" class="autorisation-form">
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input name="login" type="text" id="form2Example1" placeholder="Логін" class="form-control" />
+                  
+                </div>
+              
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input name="password" type="password" id="form2Example2" placeholder="Пароль" class="form-control" />
+                  
+                </div>
+              
+                <!-- 2 column grid layout for inline styling -->
+                <div class="row mb-41">
+                  <div class="col d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="form2Example31"
+                        checked
+                      />
+                      <label class="form-check-label" for="form2Example31"> Запам’ятай мене </label>
+                    </div>
+                  </div>
+              
+                  <div class="col">
+                    <!-- Simple link -->
+                    <a href="#!">Забув пароль?</a>
+                  </div>
+                </div>
+
+                {{#if error}}
+                  <p>{{error}}</p>
+                {{/if}}
+              
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">Авторизуватись</button>
+              
+                <!-- Register buttons -->
+                <div class="text-center1">
+                  <p>Немаєте аккаунта? <a href="#!">Звязатись з нами</a></p>
+                  
+                  </button>
+                </div>
+            </form>
+        </div>
+        <footer class="footer">
+            <div class="footer-left">
+              <img src="img/image10.png" alt="">
+              <p class="f-p">Copyright © 2022. Усі права захищено. </p>
+            </div>
+            <div class="footer-right">
+              <img src="img/Subtract-4.png" alt="">
+              <img src="img/Subtract-3.png" alt="">
+              <img src="img/Subtract.png" alt="">
+              <img src="img/Vector.png" alt="">
+              <img src="img/Subtract-2.png" alt="">
+              <img src="img/Subtract-1.png" alt="">
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>
